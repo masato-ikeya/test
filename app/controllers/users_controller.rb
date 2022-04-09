@@ -7,16 +7,18 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets
-    @favorite_tweets =@user.favorite_tweets
+    @favorite_tweets = @user.favorite_tweets
   end
-  
-  def folows
+
+# ==============追加================
+  def follows
     user = User.find(params[:id])
     @users = user.followings
   end
-  
+
   def followers
     user = User.find(params[:id])
-    @users =user.followers
+    @users = user.followers
   end
+# ==============追加================
 end
